@@ -1,0 +1,26 @@
+.button{
+	padding: 1rem 2rem; 
+	border-radius: 30px;
+	color: #000;
+	transition: background-color 0.3s;
+	background-color: #F9C06A;
+	@media (any-hover: hover){
+		&:hover{
+			background-color: #ffd391;
+			
+		}
+	}
+	
+}
+.title{
+	font-size: 3.37rem; /* 54/16 */
+	color: #603809;
+	font-weight: 700;
+	line-height: 1.2;
+}
+.description{
+	font-size: 1.25rem; /* 20/16 */
+	color: #707070;
+	font-weight: 400;
+	line-height: 2.12rem; /* 34/16 */
+}
