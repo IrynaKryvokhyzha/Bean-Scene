@@ -1,26 +1,43 @@
 <template>
-	<section class="discover">
-		<div class="discover__container">
-			<div class="discover__section section">
-				<div class="section__content content">
-					<h2 class="content__title title">Discover the best coffee</h2>
-					<p class="content__description description">
-						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.
-					</p>
-					<button class="content__button button">Learn more</button>
-				</div>
+
+		<text-image-data-component>
+			<template #title >
+				<h2 class="content__title title">
+					{{ title }}
+				</h2>
+				
+			</template>
+			<template #description>
+				<p class="content__description description">
+					{{ description }}
+				</p>
+			</template>
+			<template #button >
+				<button class="content__button button">
+					{{ buttonTitle }}
+				</button>
+			</template>
+			<template #image>
 				<div class="section__image-ibg-contain">
-					<img src="../assets/images/beans_cup.png" alt="cup of coffee beans">
+					<img :src="image" alt="cup of coffee beans">
 				</div>
-			</div>
-		</div>
-		
-	</section>
+			</template>
+		</text-image-data-component>
 </template>
 
 <script>
+import TextImageDataComponent from './TextImageDataComponent.vue'
 	export default {
-		name:"DiscoverComponent"
+		name:"DiscoverComponent",
+		components: { TextImageDataComponent },
+		data() {
+			return {
+				title: 'Discover the best coffee',
+				description: 'Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.',
+				buttonTitle: 'Learn more',
+				image: require('@/assets/images/beans_cup.png')
+			}
+		},
 	}
 </script>
 
