@@ -1,43 +1,31 @@
 <template>
-
-		<text-image-data-component>
-			<template #title >
-				<h2 class="content__title title">
-					{{ title }}
-				</h2>
-				
-			</template>
-			<template #description>
-				<p class="content__description description">
-					{{ description }}
-				</p>
-			</template>
-			<template #button >
-				<button class="content__button button">
-					{{ buttonTitle }}
-				</button>
-			</template>
-			<template #image>
-				<div class="section__image-ibg-contain">
-					<img :src="image" alt="cup of coffee beans">
+	<section class="discover">
+		<div class="discover__container">
+			<div class="discover__section section">
+				<div class="section__content content">
+						<h2 class="content__title title">
+							Discover the best coffee
+						</h2>
+						<p class="content__description description">
+							Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.
+						</p>
+						<button class="content__button button">
+							Learn more
+						</button>
 				</div>
-			</template>
-		</text-image-data-component>
+					<div class="section__image-ibg-contain">
+						<img src="@/assets/images/beans_cup.png" alt="cup from beans">
+					</div>
+			</div>
+		</div>
+		
+	</section>
 </template>
 
 <script>
-import TextImageDataComponent from './TextImageDataComponent.vue'
+
 	export default {
 		name:"DiscoverComponent",
-		components: { TextImageDataComponent },
-		data() {
-			return {
-				title: 'Discover the best coffee',
-				description: 'Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.',
-				buttonTitle: 'Learn more',
-				image: require('@/assets/images/beans_cup.png')
-			}
-		},
 	}
 </script>
 
@@ -45,6 +33,7 @@ import TextImageDataComponent from './TextImageDataComponent.vue'
 .discover {
 	padding-top: 11.25rem; 
 	padding-bottom: 4.37rem; 
+
 	@media (max-width: 991px) { 
 		padding-top: 6rem; 
 		padding-bottom: 1rem; 
@@ -70,7 +59,7 @@ import TextImageDataComponent from './TextImageDataComponent.vue'
 	&__section {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 1.25rem; 
+		column-gap: 1.25rem; 
 		@media (max-width: 991px) { 
 			grid-template-columns: auto;
 			row-gap: 1rem;
@@ -138,5 +127,4 @@ import TextImageDataComponent from './TextImageDataComponent.vue'
 }
 .button {
 }
-
 </style>
