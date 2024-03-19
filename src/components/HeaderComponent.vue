@@ -44,10 +44,7 @@
 					document.body.classList.remove('no-scroll');
 				}
 			},
-		// 	toRem(px) {
-		// 		let result= this.math.div(px, 16);
-		// 		return result
-		// },
+	
 	}
 	}
 </script>

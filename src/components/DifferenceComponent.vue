@@ -23,11 +23,12 @@
 import { mapGetters, mapActions } from 'vuex';
 	export default {
 		name:"DifferenceComponent",
-		created () {
-			this.loadDifferenceList();
-		},
+	
 		computed: {
 			...mapGetters('differenceItems',['getDifferenceList'])
+		},
+		created () {
+			this.loadDifferenceList();
 		},
 		methods: {
 			...mapActions('differenceItems',['loadDifferenceList'])
@@ -49,11 +50,7 @@ import { mapGetters, mapActions } from 'vuex';
 		align-items: center;
 		gap: 1rem;
 		@media (max-width: 767px) { 
-			padding-top: 1rem;
-		
-			padding-bottom: 1rem;
-			padding-left: 0px;
-			padding-right: 0px;
+			padding: 1rem 0 ;
 		}
 	}
 
