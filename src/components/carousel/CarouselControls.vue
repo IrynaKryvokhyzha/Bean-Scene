@@ -19,7 +19,7 @@
 }
 
 .carousel-control {
-	//display: inline-block;
+	display: inline-block;
 	position: absolute;
 	top: calc(50% - 41px);
 	height: 82px;
@@ -29,7 +29,7 @@
 	color: #000;
 	transition: background-color 0.3s;
 	background-color: #F9C06A;
-	z-index: 5;
+   z-index: 5;
 	@media (any-hover: hover){
 		&:hover{
 			background-color: #ffd391;
@@ -38,10 +38,10 @@
 	}
 }
 .left {
-	left: -10px;
+	left: 0;
 }
 .right {
-	right: -10px;
+	right: 0;
 }
 
 </style>

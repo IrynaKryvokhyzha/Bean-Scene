@@ -1,5 +1,5 @@
 <template>
-	<div class="carousel">
+	<div class="carousel-container">
 		
 		<div class="carousel-inner">
 			<carousel-controls @prev="prev" @next="next"/>
@@ -15,7 +15,6 @@
 			>
 
 			</carousel-item>
-			
 		</div>
 	</div>
 </template>
@@ -70,10 +69,10 @@ import { mapGetters} from 'vuex';
 			},
 			startSlideInterval() {
 				this.stopSlideInterval()
-				this.slideInterval = setInterval(() => {
-					this._next()
-					document.addEventListener("visibilitychange", this.handleVisibilityChange);
-				}, 3000);
+				// this.slideInterval = setInterval(() => {
+				// 	this._next()
+				// 	document.addEventListener("visibilitychange", this.handleVisibilityChange);
+				// }, 3000);
 			},
 			stopSlideInterval() {
 				clearInterval(this.slideInterval);
@@ -92,16 +91,19 @@ import { mapGetters} from 'vuex';
 </script>
 
 <style lang="scss" scoped>
-.carousel{
+.carousel-container {
+	position: relative;
 	display: flex;
 	justify-content: center;
 
 }
+
 .carousel-inner{
 	position: relative;
-	min-width: 980px;
-margin: 50px;
-	//width: 61.25rem; /* 980/16 */
+	//min-width: 980px;
+	margin: 50px;
+	width: 61.25rem; /* 980/16 */
+
 	min-height: 36.25rem; /* 580/16 */
 	margin: 0 auto;
 	overflow: hidden;

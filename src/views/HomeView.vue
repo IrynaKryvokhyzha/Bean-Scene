@@ -1,15 +1,17 @@
 <template>
-<main-master-page>
-<coffee-component/>
-<discover-component/>
-<flavors-list/>
-<difference-component/>
-<chance-component/>
-<feedback-component/>
-</main-master-page>
+	<main-master-page>
+	<coffee-component/>
+	<discover-component/>
+	<flavors-list/>
+	<difference-component/>
+	<chance-component/>
+	<feedback-component/>
+	<subscribe-component/>
+	</main-master-page>
 </template>
 
 <script>
+import SubscribeComponent from '@/components/SubscribeComponent.vue';
 import ChanceComponent from '../components/ChanceComponent.vue';
 import CoffeeComponent from '../components/CoffeeComponent.vue';
 import DifferenceComponent from '../components/DifferenceComponent.vue';
@@ -22,7 +24,16 @@ import MainMasterPage from '../masterpages/MainMasterPage.vue';
 
 export default {
   name: "HomeView",
-  components: { MainMasterPage, CoffeeComponent, DiscoverComponent, FlavorsList, DifferenceComponent, ChanceComponent, FeedbackComponent},
+  components: { 
+	MainMasterPage, 
+	CoffeeComponent, 
+	DiscoverComponent, 
+	FlavorsList, 
+	DifferenceComponent, 
+	ChanceComponent, 
+	FeedbackComponent,
+	SubscribeComponent
+},
 
 };
 </script>

@@ -126,6 +126,9 @@ import { mapGetters, mapActions } from 'vuex';
 				background-color: #FFEED8;
 			}
 		}
+		@media (max-width: 450px) { 
+			margin-left: 0;
+		}
 
 	}
 	// .cards__image

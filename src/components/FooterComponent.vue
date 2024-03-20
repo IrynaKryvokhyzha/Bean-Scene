@@ -73,6 +73,9 @@
 			padding-right: 1rem;
 			padding-left: 1.5rem;
 		}
+		@media (max-width: 767px) { 
+			padding-top: 2rem; 
+		}
 	}
 
 	// .footer__body
