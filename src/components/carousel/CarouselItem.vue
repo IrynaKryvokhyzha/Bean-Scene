@@ -63,7 +63,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-
+		
 	}
 }
 .item {
@@ -85,10 +85,25 @@
 			background: url(@/assets/images/semicolon.svg) top / cover no-repeat;
 			top: 6%;
 			left: 3%;
-			width: 82px;
-			height: 60px;
+			width: 5.12rem;
+			height: 3.75rem;
+			@media (max-width: 767px) { 
+				width: 3.58rem;
+				height: 2.62rem;
+			}
+			@media (max-width: 655px) { 
+				width: 2.86rem;
+				height: 2.09rem;
+			}
 		}
-
+		@media (max-width: 991px) { 
+			padding-top: 5rem;
+		}
+		@media (max-width: 655px) { 
+			padding-top: 2.5rem;
+			gap: 0.3rem;
+			
+		}
 	}
 }
 .content {
@@ -99,11 +114,15 @@
 		color: #707070;
 		font-size: 18px;
 		font-weight: 600;
-		line-height: 36px;
+		line-height: 2.25rem;
 		padding-left: 6.25rem;
 		padding-right: 6.25rem;
 		text-align: center;
+		@media (max-width: 767px) { 
+			line-height: 1.5rem;
+		}
 	}
+
 
 	// .content__name
 
@@ -138,6 +157,9 @@
 		img{
 			width: 100%;
 			height: 100%;
+		}
+		@media (max-width: 655px) { 
+			margin-bottom: 0;
 		}
 	}
 }

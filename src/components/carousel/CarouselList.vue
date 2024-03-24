@@ -1,20 +1,20 @@
 <template>
 	<div class="carousel-container">
-		
-		<div class="carousel-inner">
-			<carousel-controls @prev="prev" @next="next"/>
-			<carousel-item 
-				v-for="(slide, index) in getFeedbackList" 
-				:key="slide.id" 
-				:slide-data="slide" 
-				:current-slide="currentSlide"
-				:index="index"
-				:direction="direction"
-				@mouseover="stopSlideInterval"
-				@mouseout="startSlideInterval"
-			>
-
-			</carousel-item>
+		<div class="carousel-wrapper">
+			<div class="carousel-inner">
+				<carousel-controls @prev="prev" @next="next"/>
+				<carousel-item 
+					v-for="(slide, index) in getFeedbackList" 
+					:key="slide.id" 
+					:slide-data="slide" 
+					:current-slide="currentSlide"
+					:index="index"
+					:direction="direction"
+					@mouseover="stopSlideInterval"
+					@mouseout="startSlideInterval"
+				>
+				</carousel-item>
+			</div>
 		</div>
 	</div>
 </template>
@@ -69,10 +69,10 @@ import { mapGetters} from 'vuex';
 			},
 			startSlideInterval() {
 				this.stopSlideInterval()
-				// this.slideInterval = setInterval(() => {
-				// 	this._next()
-				// 	document.addEventListener("visibilitychange", this.handleVisibilityChange);
-				// }, 3000);
+				this.slideInterval = setInterval(() => {
+					this._next()
+					document.addEventListener("visibilitychange", this.handleVisibilityChange);
+				}, 3000);
 			},
 			stopSlideInterval() {
 				clearInterval(this.slideInterval);
@@ -80,10 +80,6 @@ import { mapGetters} from 'vuex';
 			handleVisibilityChange() {
 				document.hidden ? this.stopSlideInterval() : this.startSlideInterval()
 			},
-			// startSlideTimer(){
-			// 	this.startSlideInterval();
-			// 	document.addEventListener("visibilitychange", this.handleVisibilityChange);
-			// },
 		},
 
 
@@ -95,17 +91,31 @@ import { mapGetters} from 'vuex';
 	position: relative;
 	display: flex;
 	justify-content: center;
+	
+}
+.carousel-wrapper{
+	position: relative;
 
 }
-
 .carousel-inner{
 	position: relative;
-	//min-width: 980px;
-	margin: 50px;
-	width: 61.25rem; /* 980/16 */
-
-	min-height: 36.25rem; /* 580/16 */
+	min-width: 61.25rem;
+	min-height: 40rem;
 	margin: 0 auto;
 	overflow: hidden;
+	@media (max-width: 1013px) { 
+		min-width: 50rem;
+	}
+	@media (max-width: 991px) { 
+		min-width: 45rem;
+	}
+	@media (max-width: 767px) { 
+		min-width: 40rem;
+		min-height: 35rem;
+	}
+	@media (max-width: 655px) { 
+		min-width: 30rem;
+		min-height: 36rem;
+	}
 }
 </style>

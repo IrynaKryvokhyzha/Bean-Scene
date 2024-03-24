@@ -39,11 +39,11 @@
 		padding-bottom: 1rem; 
 	}
 	@media (max-width: 767px) { 
-		padding-top: 4rem; 
+		padding-top: 3rem; 
 		padding-bottom: 0.5rem; 
 	}
 	@media (max-width: 450px) { 
-		padding-top: 3rem; 
+		padding-top: 2rem; 
 	}
 	// .discover__container
 
@@ -103,7 +103,9 @@
 		}
 		@media (max-width: 450px) { 
 			font-size: 2.62rem; 
-
+			&:not(:last-child) {
+				margin-bottom: 1rem; /* 50/16 */
+			}
 		}
 	}
 

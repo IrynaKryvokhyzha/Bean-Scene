@@ -32,12 +32,51 @@ import CarouselManager from './carousel/CarouselManager.vue';
 
 <style lang="scss" scoped>
 .feedback {
-	padding-top: 5.93rem; /* 95/16 */
-	padding-bottom: 8.75rem; /* 140/16 */
+	position: relative;
+	padding: 5.93rem 1rem 1rem 1rem  ; 
+	@media (max-width: 991px) { 
+		padding-top: 3rem;
+	}
+	@media (max-width: 767px) { 
+		padding-top: 1.5rem;
+	}
+	@media (max-width: 485px) { 
+		display: none;
+	}
+	&::before{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		bottom: 5%;
+		left: 0;
+		background: url(../assets/images/coffee_blast.png) bottom / contain no-repeat;
+		max-width: 35%;
+		z-index: 10;
+	}
+	&::after{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		bottom: -15%;
+		right: 0;
+		background: url(../assets/images/coffee_blast.png) bottom / contain no-repeat;
+		transform: rotate(180deg);
+		max-width: 35%;
+		z-index: 10;
+		@media (max-width: 600px) {
+			bottom: -20%;
+		}
+	}
 		// .feedback__container
 
 		&__container {
-	
+			@media (max-width: 767px) { 
+				padding-left: 0;
+				padding-right: 0;
+			}
+			
 		}
 
 		// .feedback__section
@@ -46,7 +85,7 @@ import CarouselManager from './carousel/CarouselManager.vue';
 		}
 }
 .section {
-padding-bottom: 30px;
+
 	// .section__content
 
 	&__content {
@@ -61,6 +100,19 @@ padding-bottom: 30px;
 	&:not(:last-child){
 		margin-bottom: 3.12rem; /* 50/16 */
 	}
+	@media (max-width: 991px) { 
+		&:not(:last-child){
+			margin-bottom: 2rem; /* 50/16 */
+		}
+	}
+	@media (max-width: 481px) { 
+		
+		&:not(:last-child){
+			margin-bottom: 1rem; 
+
+		}
+		
+	}
 	// .content__title
 
 	&__title {
@@ -68,13 +120,27 @@ padding-bottom: 30px;
 		&:not(:last-child){
 			margin-bottom: 1rem; /* 50/16 */
 		}
+		@media (max-width: 767px) { 
+			font-size: 2.87rem; /* 46/16 */
+			&:not(:last-child) {
+				margin-bottom: 0.5rem; /* 50/16 */
+			}
+		}
+		@media (max-width: 481px) { 
+			font-size: 2.2rem; 
+			line-height: 1.2;
+
+		}
 	}
 
 	// .content__description
 
 	&__description {
 		text-align: center;
+		@media (max-width: 481px) { 
+			line-height: 1.3;
 
+		}
 	}
 }
 
