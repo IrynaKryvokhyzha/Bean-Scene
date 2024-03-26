@@ -1,12 +1,12 @@
 <template>
 	<div>
-
+		FlavorsItem.vue
 	</div>
 </template>
 
 <script>
 	export default {
-		name:'FlavorsManager'
+		name:"FlavorsItem"
 	}
 </script>
 

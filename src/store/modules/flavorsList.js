@@ -14,7 +14,7 @@ export default {
 
 		getFlavorsList: (state) => state.flavorsList,
 		getItemById: (state) => (itemId) => state.flavorsList.find((item) => item.id == itemId),
-
+		getFirstFourFlavors: (state) => state.flavorsList.slice(0,4)
 
 	},
 	mutations: {

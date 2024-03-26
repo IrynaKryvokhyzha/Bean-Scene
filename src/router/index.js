@@ -32,7 +32,7 @@ const routes = [
 	path: "/menu/coffee-item",
 	name: "coffee-item",
 	component: () =>
-	  import(/* webpackChunkName: "coffee-item" */ "../components/FlavorsItem"),
+	  import(/* webpackChunkName: "coffee-item" */ "../components/flavors/FlavorsItem"),
  },
 ];
 

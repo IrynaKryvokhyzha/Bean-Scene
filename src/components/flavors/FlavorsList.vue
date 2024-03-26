@@ -1,10 +1,11 @@
 <template>
 	<section class="flavors">
 		<div class="flavors__container">
-			<h2 class="flavors__title title">Enjoy a new blend of coffee style</h2>
-			<h5 class="flavors__description description">Explore all flavours of coffee with us. There is always a new cup worth experiencing</h5>
+			<slot name="header">
+				
+			</slot>
 			<div class="flavors__list">
-				<div  v-for="item in getFlavorsList" :key="item.id" class="flavors__items">
+				<div  v-for="item in getFlavorsList" :key="item.id" class="flavors__items" >
 					<div class="flavors__item item">
 						<div class="item__image-ibg-contain">
 							<img :src="item.image" alt="">
@@ -33,6 +34,12 @@ import { mapGetters, mapActions } from 'vuex';
 		data() {
 			return {
 				percent: '%'
+			}
+		},
+		props: {
+			getFlavorsList: {
+				type: Array, // Тип пропсу - масив
+				required: true // Обов'язковий пропс
 			}
 		},
 		computed: {
@@ -64,25 +71,6 @@ import { mapGetters, mapActions } from 'vuex';
 		}
 	}
 
-	// .flavors__title
-
-	&__title {
-		&:not(:last-child) {
-			margin-bottom: 1.87rem; /* 30/16 */
-		}
-		@media (max-width: 530px) { 
-			font-size: 2.87rem; 
-			
-		}
-	}
-
-	// .flavors__description
-
-	&__description {
-		&:not(:last-child) {
-			margin-bottom: 2.31rem; /* 37/16 */
-		}
-	}
 
 	// .flavors__list
 

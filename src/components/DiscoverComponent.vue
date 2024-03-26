@@ -45,12 +45,32 @@
 	@media (max-width: 450px) { 
 		padding-top: 2rem; 
 	}
+
 	// .discover__container
 
 	&__container {
+		position: relative;
 		@media (max-width: 767px) { 
 			padding-left: 2rem; 
 			padding-right: 2rem; 
+		}
+		&::after{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 30%;
+			left: -5%;
+			background: url(../assets/images/coffee_blast.png) top/ contain no-repeat;
+			transform: rotateX(180deg);
+			max-width: 35%;
+			z-index: 10;
+			@media (max-width: 1130px) { 
+				top: 20%;
+			}
+			@media (max-width: 991px) { 
+				top: 0;
+			}
 		}
 	}
 

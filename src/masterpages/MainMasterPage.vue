@@ -1,9 +1,9 @@
 <template>
-<header-component/>
-<main class="main">
-	<slot></slot>
-</main>
-<footer-component/>
+	<header-component/>
+	<main class="main">
+		<slot></slot>
+	</main>
+	<footer-component/>
 </template>
 
 <script>
