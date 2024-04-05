@@ -29,7 +29,7 @@
 	color: #000;
 	transition: background-color 0.3s;
 	background-color: #F9C06A;
-   z-index: 5;
+   z-index: 20;
 	@media (any-hover: hover){
 		&:hover{
 			background-color: #ffd391;

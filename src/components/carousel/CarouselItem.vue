@@ -32,15 +32,15 @@
 				default: ()=>({})
 			},
 			currentSlide: {
-				type: Object,
-				default: ()=>({})
+				type: Number,
+				
 			},
 			index: {
-				type: Object,
-				default: ()=>({})
+				type: Number,
+
 			},
 			direction: {
-				type: Object,
+				type: String,
 
 			},
 		},

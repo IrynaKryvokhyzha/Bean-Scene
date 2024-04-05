@@ -52,7 +52,7 @@ export default {
 					})
 		},
 
-		signUpWithWithEmailAndPassword({ commit, dispatch }, { email, password , errorMessage}) {
+		signUpWithWithEmailAndPassword({ commit, dispatch }, { email, password}) {
 			if (!email || !password) 
 			  throw new Error('Email and password are required.')
 			 else{
@@ -71,7 +71,7 @@ export default {
 		 }
 	},
 
-	async signInWithWithEmailAndPassword({ commit, dispatch }, { email, password, errorMessage }) {
+	async signInWithWithEmailAndPassword({ commit, dispatch }, { email, password}) {
 		try {
 	 
 		  const auth = getAuth();

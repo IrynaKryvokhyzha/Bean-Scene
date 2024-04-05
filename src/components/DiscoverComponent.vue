@@ -9,7 +9,7 @@
 						<p class="content__description description">
 							Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.
 						</p>
-						<button class="content__button button">
+						<button class="content__button button" @click="onAboutUs">
 							Learn more
 						</button>
 				</div>
@@ -26,6 +26,14 @@
 
 	export default {
 		name:"DiscoverComponent",
+		methods: {
+			onAboutUs(){
+				this.$router.push({
+					name: 'about'
+					
+				})
+			},
+		},
 	}
 </script>
 
@@ -148,5 +156,7 @@
 	}
 }
 .button {
+	position: absolute;
+	z-index: 20;
 }
 </style>

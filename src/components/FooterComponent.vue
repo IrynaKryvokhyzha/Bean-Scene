@@ -59,12 +59,16 @@
 
 <style lang="scss" scoped>
 .footer {
+//position: sticky;
+//width: 100%;
+//height: auto;
+//bottom: 0;
+//left: 0;
 
-	// .footer__container
+
 
 	&__container {
 		position: relative;
-		height: 100%;
 		color: white;
 		padding-top: 10rem; /* 160/16 */
 		font-weight: 400;
@@ -96,20 +100,23 @@
 
 	&__image-ibg {
 		position: absolute;
-			width: 100%;
-			height: 100%;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
+		img{
+
+		}
+		&::before{
+			content: " ";
+			position: absolute;
 			top: 0;
 			left: 0;
-			box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
-			&::before{
-				content: " ";
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: #2f1403;
-			}
+			width: 100%;
+			height: 100%;
+			background: #2f1403;
+		}
 			&::after{
 				content: " ";
 				position: absolute;
@@ -233,9 +240,7 @@
 		padding-left: 2rem;
 		:nth-child(3){
 			grid-column: span 2;
-
 		}
-		
 	}
 	@media (max-width: 377px) { 
 		grid-template-columns: auto; 

@@ -34,6 +34,24 @@ const routes = [
 	component: () =>
 	  import(/* webpackChunkName: "coffee-item" */ "../components/flavors/FlavorsItem"),
  },
+ {
+	path: "/sign-up",
+	name: "sign-up",
+	// meta: {
+	// 	requireAuth: false,
+	//  },
+	component: () =>
+	  import(/* webpackChunkName: "sign-up" */ "../components/Login/SignUpPage"),
+ },
+ {
+	path: "/login",
+	name: "login",
+	// meta: {
+	// 	requireAuth: false,
+	//  },
+	component: () =>
+	  import(/* webpackChunkName: "login" */ "../components/Login/LoginPage"),
+ },
 ];
 
 const router = createRouter({

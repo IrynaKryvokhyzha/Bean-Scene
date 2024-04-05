@@ -3,6 +3,7 @@ import { createStore } from "vuex";
 import flavorsItems from './modules/flavorsList';
 import differenceItems from './modules/differenceList';
 import feedbackItems from './modules/feedbacklist';
+import auth from './modules/auth';
 import data from './helpers/data'
 export default createStore({
 	namespaced: true,
@@ -14,6 +15,7 @@ export default createStore({
 		flavorsItems,
 		differenceItems,
 		feedbackItems,
-		data
+		data,
+		auth
 	},
 });

@@ -22,11 +22,12 @@
 <script>
 import CarouselItem from './CarouselItem.vue'
 import CarouselControls from './CarouselControls.vue';
-import { mapGetters} from 'vuex';
+import { mapGetters, mapActions} from 'vuex';
 
 	export default {
 		name:'CarouselList',
 		components: { CarouselItem, CarouselControls },
+		
 		data() {
 			return {
 				currentSlide: 0,
@@ -39,7 +40,12 @@ import { mapGetters} from 'vuex';
 		},
 
 		mounted () {
-			this.startSlideInterval()
+			this.loadFeedbackList().then(()=>{
+				this.startSlideInterval()
+			}), error => {
+        console.error('Failed to load feedback list', error);
+    }
+			
 		},
 		beforeUnmount (){
 			this.stopSlideInterval();
@@ -49,19 +55,20 @@ import { mapGetters} from 'vuex';
 
 
 		methods: {
+			...mapActions('feedbackItems', ['loadFeedbackList']),
 			setCurrentSlide(index) {
 				this.currentSlide = index
 			},
 			prev(){
 				const index = this.currentSlide > 0 ? this.currentSlide - 1 : this.getFeedbackList.length - 1;
 				this.setCurrentSlide(index)
-				this.direction='left'
+				this.direction ='left'
 				this.startSlideInterval()
 			},
 			_next(){
 				const index = this.currentSlide < this.getFeedbackList.length - 1 ? this.currentSlide + 1 : 0;
 				this.setCurrentSlide(index)
-				this.direction='right'
+				this.direction ='right'
 			},
 			next(){
 				this._next()

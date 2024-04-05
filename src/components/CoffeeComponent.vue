@@ -9,7 +9,7 @@
 					best flavours coffee you will ever have. We provide the best
 					for our customers.
 				</p>
-				<button class="header-section__button button">Order Now</button>
+				<button class="header-section__button button" @click="onMenu">Order Now</button>
 			</div>
 			<div class="coffee__image-ibg">
 				<img src="@/assets/images/coffee_image.jpg" alt="cup with beans near by">
@@ -20,7 +20,14 @@
 
 <script>
 	export default {
-		name:'CoffeeComponent'
+		name:'CoffeeComponent',
+		methods: {
+			onMenu(){
+				this.$router.push({
+					name: 'menu'
+				})
+			},
+		},
 	}
 </script>
 
@@ -51,7 +58,9 @@
 		position: relative;
 		z-index: 2;
 		margin: 0 auto;
-		max-width: 525px;
+		max-width: 625px;
+
+
 	}
 
 	// .coffee__image-ibg
@@ -131,8 +140,6 @@
 	&__button {
 	}
 }
-.button {
-	
-}
+
 
 </style>

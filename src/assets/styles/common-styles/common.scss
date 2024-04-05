@@ -10,8 +10,19 @@
 			
 		}
 	}
+	&:disabled{
+		background-color: rgb(215, 215, 215);
+		box-shadow:none;
+		@media (any-hover: hover){
+			&:hover{
+				background-color:  rgb(215, 215, 215);
+				box-shadow:none;
+			}
+		}
+	}
 	
 }
+
 .title{
 	font-size: 3.37rem; /* 54/16 */
 	color: #603809;

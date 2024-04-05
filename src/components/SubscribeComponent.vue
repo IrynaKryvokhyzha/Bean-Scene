@@ -31,7 +31,6 @@
 		padding-bottom: 5rem;
 		position: relative;
 		background: url(../assets/images/chance/background.png) right / cover no-repeat;
-		max-width: 1366px;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;

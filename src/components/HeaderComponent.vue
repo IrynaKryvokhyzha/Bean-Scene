@@ -17,16 +17,33 @@
 					</ul>
 				</nav>
 			</div>
-			<div class="header__actions">
-				<button class="actions__button button">Sign In</button>
-				<button class="actions__button button">Sign Up</button>
+			<div class="header__user user">
+				<div v-if="getUser" class="user__item">
+					<span v-if="getUser.displayName" class="user__name">{{getUser.displayName}}</span>
+					<span v-else class="user__name">{{getUser.email}}</span>
+					<span v-if="getUser.photoURL">
+						<img :src="getUser.photoURL" alt="user logo" class="user__image">
+					</span>
+					<button class="button" @click="logout" >Logout</button>
+				</div>
+				<div v-else  class="header__actions">
+					<button class="actions__button button" @click="onLogin">Sign In</button>
+					<button class="actions__button button" @click="onSignUp">Sign Up</button>
+				</div>
+				<!-- <button  class="open-filter" @click="toSearch"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></button>
+				<button class="cart" @click="toCart"><font-awesome-icon :icon="['fas', 'cart-shopping']" /></button> -->
 			</div>
+			<!-- <div class="header__actions"> -->
+				<!-- <button class="actions__button button" @click="onLogin">Sign In</button> -->
+				<!-- <button class="actions__button button" @click="onSignUp">Sign Up</button> -->
+			<!-- </div> -->
 		</div>
 	</header>
 	
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 	export default {
 		name: 'HeaderComponent',
 		data() {
@@ -34,7 +51,12 @@
 				sidebarVisible: false
 			}
 		},
+		computed: {
+			...mapGetters('auth',['getUser']),
+		
+		},
 		methods: {
+			...mapActions('auth',['logout']),
 			showSidebar() {
 				this.sidebarVisible = !this.sidebarVisible
 				if (this.sidebarVisible) {
@@ -43,6 +65,16 @@
 				} else {
 					document.body.classList.remove('no-scroll');
 				}
+			},
+			onLogin(){
+				this.$router.push({
+					name: 'login'
+				})
+			},
+			onSignUp(){
+				this.$router.push({
+					name: 'sign-up'
+				})
 			},
 	
 	}
@@ -78,7 +110,7 @@
 		align-items: center;
 		font-weight: 500;
 		color: #fff;
-		background-color: rgba(4, 4, 3, 0.3);
+		background-color: rgba(8, 8, 6, 0.9);
 		@media (max-width: 991px) {
 			padding-right: 4rem;
 			padding-left: 4rem;
@@ -238,5 +270,55 @@
 		transform: rotate(45deg) translate(0px,50%);
 	}
 }
-
+.user {
+	display: flex;
+	
+	
+		// .user__item
+	
+		&__item {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			gap: 10px;
+			align-items: center;
+			
+		}
+	
+	
+		// .user__name
+	
+		&__name {
+			align-self: center;
+			@media (max-width: 991px) {
+				display: none;
+				
+			}
+		}
+	
+		// .user__image
+	
+		&__image {
+			border-radius: 50%;
+			align-items: center;
+			width: 40px;
+			height: 40px;
+			aspect-ratio: 1/2;
+	
+			@media (max-width: 991px) {
+				display: none;
+			}
+			img{
+				width: 100%;
+			}
+		}
+		// .user__login-icon
+	
+		&__login-icon {
+			@media (min-width: 767.98px) {
+				display: none;
+			}
+		}
+	}
+	
 </style>
