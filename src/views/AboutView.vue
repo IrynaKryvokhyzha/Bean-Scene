@@ -1,15 +1,16 @@
 <template>
 	<main-master-page>
 		<div class="about">
+			<div class="start__image-ibg">
+				<img src="../assets/images/about/cups.jpg" alt="two coffee cups">
+			</div>
 			<div class="about__container">
 				<div class="about__start start">
 					<div class="start__header">
 						<h1 class="start__title title">WHERE TO BEGIN?</h1>
 						<h5 class="start__description description">HOW ABOUT HERE...</h5>
 					</div>
-					<div class="start__image-ibg">
-						<img src="../assets/images/about/cups.jpg" alt="two coffee cups">
-					</div>
+					
 				</div>
 				<div class="about__garage garage">
 					<div class="garage__content">
@@ -99,6 +100,7 @@ import MainMasterPage from '../masterpages/MainMasterPage.vue'
 position: relative;
 padding: 0 2rem 0 4rem;
 height: 100vh;
+
 @media (max-width: 550px) { 
 	padding: 0 2rem 0 2rem;
 }

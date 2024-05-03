@@ -59,6 +59,7 @@
 
 <style lang="scss" scoped>
 .footer {
+	
 //position: sticky;
 //width: 100%;
 //height: auto;
@@ -72,7 +73,7 @@
 		color: white;
 		padding-top: 10rem; /* 160/16 */
 		font-weight: 400;
-		padding-bottom: 2rem;
+		padding: 5rem 5rem 2rem 5rem;
 		@media (max-width: 991px) {
 			padding-right: 1rem;
 			padding-left: 1.5rem;

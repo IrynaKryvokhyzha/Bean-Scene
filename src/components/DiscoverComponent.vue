@@ -39,6 +39,7 @@
 
 <style lang="scss" scoped>
 .discover {
+	position: relative;
 	padding-top: 11.25rem; 
 	padding-bottom: 4.37rem; 
 
@@ -57,7 +58,7 @@
 	// .discover__container
 
 	&__container {
-		position: relative;
+		
 		@media (max-width: 767px) { 
 			padding-left: 2rem; 
 			padding-right: 2rem; 
@@ -67,7 +68,7 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			top: 30%;
+			top: 10%;
 			left: -5%;
 			background: url(../assets/images/coffee_blast.png) top/ contain no-repeat;
 			transform: rotateX(180deg);

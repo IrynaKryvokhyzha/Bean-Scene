@@ -38,11 +38,11 @@ import { mapGetters, mapActions } from 'vuex';
 
 <style lang="scss" scoped>
 .difference {
-
+	position: relative;
 	// .difference__container
 
 	&__container {
-		position: relative;
+		
 		padding-top: 1.87rem; /* 30/16 */
 		padding-bottom: 1.87rem; /* 30/16 */
 		display: flex;
@@ -58,12 +58,12 @@ import { mapGetters, mapActions } from 'vuex';
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			bottom: 5%;
+			bottom: 20%;
 			right: -5%;
 			background: url(../assets/images/coffee_blast.png) bottom / contain no-repeat;
 			transform: rotate(180deg);
 			max-width: 35%;
-			z-index: 10;
+			z-index: 5;
 			@media (max-width: 1134px) { 
 				bottom: -5%;
 			}
@@ -97,6 +97,7 @@ import { mapGetters, mapActions } from 'vuex';
 		gap: 1.25rem; /* 20/16 */
 		margin-top: 20px;
 		margin-bottom: 24px;
+		z-index: 12;
 		@media (max-width: 1134px) { 
 			grid-template-columns: repeat(2, 1fr);
 		}

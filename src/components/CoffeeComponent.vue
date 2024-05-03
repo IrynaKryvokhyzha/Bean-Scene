@@ -1,6 +1,9 @@
 <template>
 	<section class="coffee">
-		<div class="coffee__container">
+		<div class="coffee__image-ibg">
+			<img src="@/assets/images/coffee_image.jpg" alt="cup with beans near by">
+		</div>
+		<div class="coffee__container1">
 			<div class="coffee__section-header header-section">
 				<h3 class="header-section__subheader">We’ve got your morning covered with 
 				<h1 class="header-section__header">coffee</h1></h3>
@@ -11,9 +14,7 @@
 				</p>
 				<button class="header-section__button button" @click="onMenu">Order Now</button>
 			</div>
-			<div class="coffee__image-ibg">
-				<img src="@/assets/images/coffee_image.jpg" alt="cup with beans near by">
-			</div>
+
 		</div>
 	</section>
 </template>
@@ -36,11 +37,12 @@
 
 	// .coffee__container
 
-	&__container {
+	&__container1 {
 		position: relative;
 		padding-top: 220px;
 		padding-bottom: 15px;
 		color: #fff;
+		height: 100vh;
 		@media (max-width: 587px) { 
 		padding-top: 100px;
 			padding-left: 40px;

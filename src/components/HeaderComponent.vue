@@ -1,6 +1,6 @@
 <template>
 	<header class="header">
-		<div class="header__container" >
+		<div class="header__component" >
 			<div class="header__logo">
 				<a href="">Bean Scene</a>
 			</div>
@@ -102,11 +102,12 @@ import { mapGetters, mapActions } from 'vuex'
 	z-index: 50;
 	// .header__container
 
-	&__container {
+	&__component {
 		display:flex;
 		flex-direction: row;
 		justify-content: space-between;
 		//gap: toRem(16);
+		padding: 0rem 5rem;
 		align-items: center;
 		font-weight: 500;
 		color: #fff;
