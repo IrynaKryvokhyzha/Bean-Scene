@@ -52,6 +52,12 @@ const routes = [
 	component: () =>
 	  import(/* webpackChunkName: "login" */ "../components/Login/LoginPage"),
  },
+ {
+	path: "/:pathMatch(.*)*",
+	name: "error",
+	component: () =>
+	  import(/* webpackChunkName: "error" */ "../components/ErrorPage.vue"),
+ },
 ];
 
 const router = createRouter({

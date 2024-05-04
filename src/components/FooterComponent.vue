@@ -59,7 +59,7 @@
 
 <style lang="scss" scoped>
 .footer {
-	
+	position: relative;
 //position: sticky;
 //width: 100%;
 //height: auto;
@@ -69,7 +69,6 @@
 
 
 	&__container {
-		position: relative;
 		color: white;
 		padding-top: 10rem; /* 160/16 */
 		font-weight: 400;
@@ -106,6 +105,7 @@
 		top: 0;
 		left: 0;
 		box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
+		object-fit: cover;
 		img{
 
 		}

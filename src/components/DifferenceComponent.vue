@@ -14,7 +14,7 @@
 			</div>
 			<h5 class="difference__subdescription description">Great ideas start with great coffee, Lets help you achieve that                                                                                                                                                               </h5>
 			<h3 class="difference__subtitle title">Get started today.</h3>
-			<button class="button">Join Us</button>
+			<button class="button" @click="onLogin">Join Us</button>
 		</div>
 	</section>
 </template>
@@ -31,7 +31,12 @@ import { mapGetters, mapActions } from 'vuex';
 			this.loadDifferenceList();
 		},
 		methods: {
-			...mapActions('differenceItems',['loadDifferenceList'])
+			...mapActions('differenceItems',['loadDifferenceList']),
+			onLogin(){
+				this.$router.push({
+					name: 'sign-up'
+				})
+			}
 		},
 	}
 </script>

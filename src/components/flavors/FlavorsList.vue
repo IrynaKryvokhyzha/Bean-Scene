@@ -8,7 +8,7 @@
 				<div  v-for="item in getFlavorsList" :key="item.id" class="flavors__items" >
 					<div class="flavors__item item">
 						<div class="item__image-ibg-contain">
-							<img :src="item.image" alt="">
+							<img :src="item.image" alt="image">
 						</div>
 						<div class="item__content">
 							<h4 class="item__content-title title">
@@ -20,7 +20,7 @@
 							<div class="item__content-price">$ {{item.price}}</div>
 						</div>
 					</div> 
-					<button class="button">Order Now</button>
+					<button class="button" @click="addItemToCart(item.id)">Order Now</button>
 				</div>
 			</div>
 		</div>
@@ -31,28 +31,35 @@
 import { mapGetters, mapActions } from 'vuex';
 	export default {
 		name:"FlavorsList",
+
 		data() {
 			return {
 				percent: '%'
 			}
 		},
-		props: {
-			getFlavorsList: {
-				type: Array, // Тип пропсу - масив
-				required: true // Обов'язковий пропс
-			}
-		},
+		
 		computed: {
 			...mapGetters ('flavorsItems',['getFlavorsList']),
-			...mapGetters('brushItems',['getBrushList', 'isLoading', 'hasError']),
+			
 		},
+		watch: {
+		error(newValue) {
+			if (newValue){
+				this.$router.push({
+				name:'error'
+			})
+			}
+			
+		}
+	 },
 		created () {
 			this.loadFlavorsList()
 
 		},
 		methods: {
 			
-			...mapActions('flavorsItems', ['loadFlavorsList'])
+			...mapActions('flavorsItems', ['loadFlavorsList']),
+			...mapActions('cartList',[ 'addItemToCart']),
 		},
 		
 	}

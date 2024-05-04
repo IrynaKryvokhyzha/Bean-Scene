@@ -8,7 +8,7 @@
 						<p class="content__description description">
 							We are giving you a one time opportunity to experience a better life with coffee.
 						</p>
-						<button class="content__button button">
+						<button class="content__button button" @click="onMenu">
 							Order Now
 						</button>
 				</div>
@@ -22,6 +22,13 @@
 <script>
 	export default {
 		name:'ChanceComponent',
+		methods: {
+			onMenu(){
+				this.$router.push({
+					name: 'menu'
+				})
+			},
+		},
 	}
 </script>
 

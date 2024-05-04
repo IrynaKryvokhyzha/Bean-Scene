@@ -30,13 +30,18 @@
 					<button class="actions__button button" @click="onLogin">Sign In</button>
 					<button class="actions__button button" @click="onSignUp">Sign Up</button>
 				</div>
+				<button class="cart" @click="toCart">
+					<font-awesome-icon :icon="['fas', 'cart-shopping']" />
+					<span v-if="cartItemCount > 0" class="cart-item-count">{{ cartItemCount }}</span>
+				</button>
+				<div :class="{ 'cart-component--visible':cartVisible}" class="cart-component">
+
+					<cart-component @close-cart="closeCart"/>
+				</div>
 				<!-- <button  class="open-filter" @click="toSearch"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></button>
 				<button class="cart" @click="toCart"><font-awesome-icon :icon="['fas', 'cart-shopping']" /></button> -->
 			</div>
-			<!-- <div class="header__actions"> -->
-				<!-- <button class="actions__button button" @click="onLogin">Sign In</button> -->
-				<!-- <button class="actions__button button" @click="onSignUp">Sign Up</button> -->
-			<!-- </div> -->
+			
 		</div>
 	</header>
 	
@@ -44,16 +49,23 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import CartComponent from '@/components/CartComponent.vue';
 	export default {
 		name: 'HeaderComponent',
+		components: { CartComponent },
 		data() {
 			return {
-				sidebarVisible: false
+				sidebarVisible: false,
+				cartVisible: false,
+
 			}
 		},
 		computed: {
 			...mapGetters('auth',['getUser']),
-		
+			...mapGetters('cartList',['getCartList']),
+			cartItemCount() {
+				return this.getCartList.reduce((total, item) => total + item.quantity, 0);
+			},
 		},
 		methods: {
 			...mapActions('auth',['logout']),
@@ -76,6 +88,14 @@ import { mapGetters, mapActions } from 'vuex'
 					name: 'sign-up'
 				})
 			},
+			toCart(){
+			this.cartVisible = true
+			
+			// this.applyScrollStyles()
+		  },
+		  closeCart(){
+			this.cartVisible= false
+		},
 	
 	}
 	}
@@ -321,5 +341,27 @@ import { mapGetters, mapActions } from 'vuex'
 			}
 		}
 	}
-	
+	.cart {
+		align-self: center;
+		padding-left: 10px;
+		position: relative; 
+		@media (any-hover: hover){
+			&:hover{
+				color: #efb257;
+				
+				
+			}
+		}
+	 }
+	 
+	 .cart-item-count {
+		position: absolute;
+		top: -8px;
+		right: -8px;
+		background-color: red;
+		color: white;
+		border-radius: 50%;
+		padding: 4px;
+		font-size: 12px;
+	 }
 </style>
