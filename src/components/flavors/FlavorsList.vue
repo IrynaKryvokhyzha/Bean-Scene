@@ -31,13 +31,19 @@
 import { mapGetters, mapActions } from 'vuex';
 	export default {
 		name:"FlavorsList",
-
+		props: {
+			getFlavorsList: {
+				type: Array, 
+				required: true 
+			}
+		},
 		data() {
 			return {
 				percent: '%'
 			}
 		},
 		
+	
 		computed: {
 			...mapGetters ('flavorsItems',['getFlavorsList']),
 			

@@ -2,7 +2,7 @@
 	<main-master-page>
 	<coffee-component/>
 	<discover-component/>
-	<flavors-list :getFlavorsList="firstFourFlavors">
+	<flavors-list :get-flavors-list="firstFourFlavors">
 	 <template #header>
       <h2 class="title">{{title}}</h2>
 		<h5 class="description">{{description}}</h5>
@@ -27,7 +27,6 @@ import FlavorsList from '../components/flavors/FlavorsList.vue';
 import MainMasterPage from '../masterpages/MainMasterPage.vue';
 // @ is an alias to /src
 
-
 export default {
   name: "HomeView",
   components: { 
@@ -43,18 +42,20 @@ export default {
 	data() {
 		return {
 			title: 'Enjoy a new blend of coffee style',
-			description: 'Explore all flavours of coffee with us. There is always a new cup worth experiencing'
+			description: 'Explore all flavours of coffee with us. There is always a new cup worth experiencing',
+
 		}
 	},
 	computed: {
+		
 		firstFourFlavors() {
       return this.getFirstFourFlavors()
-    }
+		}
 	},
 	methods: {
 		...mapGetters ('flavorsItems',['getFirstFourFlavors']),
 	},
-
+	
 };
 </script>
 <style lang="scss" scoped>

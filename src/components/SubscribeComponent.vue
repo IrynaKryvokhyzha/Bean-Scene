@@ -8,16 +8,65 @@
 				Don’t miss out on our latest news, updates, tips and special offers
 			</h5>
 			<label  for="subscription">
-				<input type="email" name="user-email" id="subscription" placeholder=" Enter your email">
-				<button class="button">Subscribe</button>
+				<input v-model="email" type="email"  name="user-email" id="subscription" placeholder=" Enter your email">
+				<button class="button"  @click="subscribe" >Subscribe</button>
+
+
+				<div class="text-center pa-4">
+					<v-dialog
+					  v-model="dialog"
+					  width="auto"
+					>
+					  <v-card
+						 max-width="400"
+						 prepend-icon="mdi-update"
+						 text="Thank you for subscribing!."
+
+					  >
+						 <template v-slot:actions>
+							<v-btn
+							  class="ms-auto"
+							  text="Close"
+							  @click="dialog = false"
+							></v-btn>
+						 </template>
+					  </v-card>
+					</v-dialog>
+				 </div>
 			</label>
+
+
+			
 		</div>
 	</section>
 </template>
 
 <script>
 	export default {
-		name:'SubscribeComponent'
+		name:'SubscribeComponent',
+		data () {
+      return {
+      	dialog: false,
+			email: ''
+      }
+   },
+	computed: {
+		
+	},
+		methods: {
+			validateEmail(email){
+			return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
+		  },
+			subscribe() {
+				if (this.validateEmail(this.email)) {
+				this.dialog = true;
+				this.email=''
+				} else {
+
+				alert('Please enter your email before subscribing.');
+				}
+			}
+		}
 	}
 </script>
 
