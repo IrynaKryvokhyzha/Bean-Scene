@@ -5,14 +5,22 @@
 		</div>
 		<div class="coffee__container1">
 			<div class="coffee__section-header header-section">
-				<h3 class="header-section__subheader">We’ve got your morning covered with 
-				<h1 class="header-section__header">coffee</h1></h3>
-				<p class="header-section__description">
-					It is best to start your day with a cup of coffee. Discover the
-					best flavours coffee you will ever have. We provide the best
-					for our customers.
-				</p>
-				<button class="header-section__button button" @click="onMenu">Order Now</button>
+				<transition appear name="subheader">
+					<h3 class="header-section__subheader">We’ve got your morning covered with </h3>
+				</transition>
+				<transition appear name="fade">
+					<h1 class="header-section__header">coffee</h1>
+				</transition>
+				<transition appear name="paragraph">
+					<p class="header-section__description">
+						It is best to start your day with a cup of coffee. Discover the
+						best flavours coffee you will ever have. We provide the best
+						for our customers.
+					</p>
+				</transition>
+				<transition appear name="button">
+					<button class="header-section__button button" @click="onMenu">Order Now</button>
+				</transition>
 			</div>
 
 		</div>
@@ -137,11 +145,30 @@
 		}
 	}
 
-	// .header-section__button
-
-	&__button {
-	}
+}
+//Animations
+.fade-enter-from{
+	opacity: 0;
+	transform: translateX(-300px);
+}
+.fade-enter-active{
+	transition: all 5s ease;
 }
 
+.subheader-enter-from,
+.paragraph-enter-from{
+	opacity: 0;
+	transform: translateX(300px);
+}
+.subheader-enter-active,
+.paragraph-enter-active{
+	transition: all 5s ease;
+}
+.button-enter-from{
+	opacity: 0;
 
+}
+.button-enter-active{
+	transition: opacity 5s ease;
+}
 </style>

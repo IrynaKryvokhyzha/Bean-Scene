@@ -15,7 +15,7 @@
 							<input v-model="password" type="password" :placeholder="password" autocomplete="on">
 						</label>
 					</div>
-					<button class="item__button button" @click="onLogin" :disabled='!isDataValid'> Login</button>
+					<button class="item__button button" :disabled='!isDataValid' @click="onLogin" > Login</button>
 					<span>or</span>
 					<button class="item__button button google-button" @click="onLoginWithGoogle" > login with Google </button>
 					<button class="item__button button" @click="onHome">Home</button>
@@ -105,10 +105,7 @@ input{
 		font-weight: 400;
 	}
 }
-.item__google-button{
-	
 
-}
 .icon{
 	//background-image: url('');
 	background-size: 25px 25px;
@@ -120,15 +117,10 @@ input{
 	// .login__container
 
 	&__container {
-		padding-top: 15px;
+		padding-top: 2rem;
 		//max-width: 600px;
 	}
 
-	// .login__item
-
-	&__item {
-
-	}
 }
 
 .item {
@@ -136,7 +128,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 20px;
+gap: 40px;
 padding: 10px;
 	// .item__header
 
@@ -146,14 +138,13 @@ padding: 10px;
 		padding-bottom: 10px;
 	}
 
-	// .item__sign-in
-
-	&__sign-in {
-	}
-
 	// .item__message
 
 	&__message {
+		position: fixed;
+		width: 100%;
+		padding: 20px;
+		top: 20px;
 		color: red;
 		padding: 0 20px;
 		text-align: center;
@@ -171,4 +162,5 @@ padding: 10px;
 		}
 	}
 }
+
 </style>

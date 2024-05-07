@@ -4,7 +4,8 @@
 			<slot name="header">
 				
 			</slot>
-			<div class="flavors__list">
+	
+			<transition-group appear tag="div" name="list" class="flavors__list">
 				<div  v-for="item in getFlavorsList" :key="item.id" class="flavors__items" >
 					<div class="flavors__item item">
 						<div class="item__image-ibg-contain">
@@ -22,7 +23,7 @@
 					</div> 
 					<button class="button" @click="addItemToCart(item.id)">Order Now</button>
 				</div>
-			</div>
+			</transition-group>
 		</div>
 	</section>
 </template>
@@ -45,7 +46,7 @@ import { mapGetters, mapActions } from 'vuex';
 		
 	
 		computed: {
-			...mapGetters ('flavorsItems',['getFlavorsList']),
+			...mapGetters ('flavorsItems',['getFlavorsList', 'isLoading', 'hasError']),
 			
 		},
 		watch: {
@@ -182,6 +183,20 @@ overflow: hidden;
 	margin-top: -25px; 
 	align-self: center;
 }
-
+.loader{
+	text-align: center;
+}
+// list transition
+.list-enter-from{
+	opacity: 0;
+	transform: scale(0.6);
+}
+.list-enter-to{
+	opacity: 1;
+	transform: scale(1);
+}
+.list-enter-active{
+	transition: all 2s ease;
+}
 
 </style>

@@ -53,6 +53,24 @@ const routes = [
 	  import(/* webpackChunkName: "login" */ "../components/Login/LoginPage"),
  },
  {
+	path: "/terms-of-use",
+	name: "terms-of-use",
+	// meta: {
+	// 	requireAuth: false,
+	//  },
+	component: () =>
+	  import(/* webpackChunkName: "terms-of-use" */ "../components/TermsComponent.vue"),
+ },
+ {
+	path: "/return-policy",
+	name: "return-policy",
+	// meta: {
+	// 	requireAuth: false,
+	//  },
+	component: () =>
+	  import(/* webpackChunkName: "return-policy" */ "../components/ReturnPolicy.vue"),
+ },
+ {
 	path: "/:pathMatch(.*)*",
 	name: "error",
 	component: () =>

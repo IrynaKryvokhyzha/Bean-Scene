@@ -7,8 +7,12 @@
 			<div class="about__container">
 				<div class="about__start start">
 					<div class="start__header">
+					<transition appear name="subheader">
 						<h1 class="start__title title">WHERE TO BEGIN?</h1>
+					</transition>
+					<transition appear name="fade">
 						<h5 class="start__description description">HOW ABOUT HERE...</h5>
+					</transition>
 					</div>
 					
 				</div>
@@ -337,6 +341,21 @@ padding: 0 1rem;
 	}
 }
 
+//Animations
+.fade-enter-from{
+	opacity: 0;
+	transform: translateX(-300px);
+}
+.fade-enter-active{
+	transition: all 5s ease;
+}
 
+.subheader-enter-from{
+	opacity: 0;
+	transform: translateX(300px);
+}
+.subheader-enter-active{
+	transition: all 5s ease;
+}
 
 </style>

@@ -7,10 +7,18 @@
 					<p class="social__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 					<div >
 						<ul class="social__social-link">
-							<li class="social__item"><font-awesome-icon :icon="['fab', 'facebook']" /></li>
-							<li class="social__item"><font-awesome-icon :icon="['fab', 'instagram']" /></li>
-							<li class="social__item"><font-awesome-icon :icon="['fab', 'youtube']" /></li>
-							<li class="social__item"><font-awesome-icon :icon="['fab', 'twitter']" /></li>
+							<li class="social__item">
+								<a href="https://www.facebook.com/"><font-awesome-icon :icon="['fab', 'facebook']" /></a>
+								</li>
+							<li class="social__item">
+								<a href="https://www.instagram.com"><font-awesome-icon :icon="['fab', 'instagram']" /></a>
+							</li>
+							<li class="social__item">
+								<a href="https://www.youtube.com/"><font-awesome-icon :icon="['fab', 'youtube']" /></a>
+								</li>
+							<li class="social__item">
+								<a href="https://twitter.com/"><font-awesome-icon :icon="['fab', 'twitter']" /></a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -18,19 +26,23 @@
 					<div class="content__column">
 						<h6 class="content__title">About</h6>
 						<ul class="content__items">
-							<li class="content__item">Menu</li>
-							<li class="content__item">Features</li>
-							<li class="content__item">News & Blogs</li>
-							<li class="content__item">Help & Supports</li>
+							<li class="content__item" @click="onMenu">Menu</li>
+							<li class="content__item" @click="onAbout">Features</li>
+							<li class="content__item">
+								<a href="https://www.coffeenews.com/">News & Blogs</a>
+							</li>
+							<li class="content__item" @click="onContact">Help & Supports</li>
 						</ul>
 					</div>
 					<div class="content__column">
 						<h6 class="content__title">Company</h6>
 						<ul class="content__items">
-							<li class="content__item">How we work</li>
-							<li class="content__item">Terms of service</li>
-							<li class="content__item">Pricing</li>
-							<li class="content__item">FAQ</li>
+							<li class="content__item" @click="onReturn">Return policy</li>
+							<li class="content__item" @click="onTerms">Terms of use</li>
+							<li class="content__item" @click="onMenu">Pricing</li>
+							<li class="content__item">
+								<a href="http://thecoffeefaq.com/">FAQ</a>
+							</li>
 						</ul>
 					</div>
 					<div class="content__column">
@@ -53,7 +65,30 @@
 
 <script>
 	export default {
-		name:'FooterComponent'
+		name:'FooterComponent',
+		methods: {
+			onMenu(){
+				this.$router.push({
+					name: 'menu'
+				})
+			},
+			
+			onContact(){
+				this.$router.push({
+					name: 'contact-us'
+				})
+			},
+			onTerms(){
+				this.$router.push({
+					name: 'terms-of-use'
+				})
+			},
+			onReturn(){
+				this.$router.push({
+					name: 'return-policy'
+				})
+			},
+		},
 	}
 </script>
 

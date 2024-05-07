@@ -3,40 +3,60 @@
 		<div class="contacts__container">
 			<div class="contacts-page">
 				<div class="contacts-page__header">
-					<h1 class="title">Contact us</h1>
-					<p class="description">We love hearing from our customers, so grab a cup and tell us what's on your mind</p>
-					<p class="description">For the fastest service, you can initiate a live-chat discussion by clicking on the Help button located in the lower right corner of every page.</p>
+					<transition appear name="fade">
+						<h1 class="title">Contact us</h1>
+					</transition>
+					<transition appear name="paragraph">
+						<p class="description">We love hearing from our customers, so grab a cup and tell us what's on your mind</p>
+					</transition>
+					<transition appear name="fade">
+						<p class="description">For the fastest service, you can initiate a live-chat discussion by clicking on the Help button located in the lower right corner of every page.</p>
+					</transition>
 				</div>
 				<div class="contacts-page__email-form">
 					<div class="email-form__top">
 						<label >
 							First Name
-							<input type="text">
+							<input v-model="firstName" type="text">
 						</label>
 						<label >
 							Last Name
-							<input type="text">
+							<input v-model="lastName" type="text">
 						</label>
 					</div>
 					<div class="email-form__bottom">
 						<label >
 							Email
-							<input type="email">
+							<input v-model="email" type="email">
 						</label>
 						<label >
 							How can we help you?
-							<textarea   rows="10"></textarea>
+							<textarea v-model="message"  rows="10"></textarea>
 						</label>
 					</div>
 				</div>
-				<button class="button">Submit</button>
+				<button class="button" @click="subscribe">Submit</button>
+
+				<div class="text-center pa-4">
+					<v-dialog v-model="dialog" width="auto">
+					<v-card max-width="800" prepend-icon="mdi-update" class="text-center" 
+						title="Thank you!"
+						text="Your submission has been received. A member of our staff will contact you shortly." >
+						<template v-slot:actions>
+							<v-btn class="ms-auto" text="Close" @click="dialog = false"
+							></v-btn>
+						</template>
+					</v-card>
+					</v-dialog>
+				</div>
+
 				<div class="contacts-page__sign-up">
 					<div class="sign-up__content">
 						<h3 class="content-title">NEVER MISS AN OFFER</h3>
 						<p class="content-description description">Sign up for our newsletter and receive 10% off + free shipping on your first order.</p>
 					</div>
 					<div class="content__button">
-						<button class="button">Sign Up</button>
+						<button class="button" @click="onSignUp">Sign Up</button>
 					</div>
 				</div>
 			</div>
@@ -47,8 +67,41 @@
 <script>
 import MainMasterPage from '../masterpages/MainMasterPage.vue'
 	export default {
-  components: { MainMasterPage },
-		name:'ContactUsView'
+		name:'ContactUsView',
+		components: { MainMasterPage },
+		data () {
+      return {
+      	dialog: false,
+			firstName: '',
+			lastName: '',
+			email: '',
+			message: ''
+			}
+		},
+ 		
+		
+		methods: {
+			validateEmail(email){
+			return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
+		},
+			subscribe() {
+				if (this.validateEmail(this.email)) {
+				this.dialog = true;
+				this.email=''
+				this.firstName=''
+				this.lastName=''
+				this.message=''
+				} else {
+
+				alert('Please enter your email before submitting.');
+				}
+			},
+			onSignUp(){
+				this.$router.push({
+					name: 'sign-up'
+				})
+			},
+		},
 	}
 </script>
 
@@ -169,5 +222,20 @@ textarea{
 
 	}
 }
+//Animations
+.fade-enter-from{
+	opacity: 0;
+	transform: translateX(-300px);
+}
+.fade-enter-active{
+	transition: all 5s ease;
+}
 
+.paragraph-enter-from{
+	opacity: 0;
+	transform: translateX(300px);
+}
+.paragraph-enter-active{
+	transition: all 5s ease;
+}
 </style>

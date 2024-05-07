@@ -13,9 +13,9 @@
 							Learn more
 						</button>
 				</div>
-					<div class="section__image-ibg-contain">
-						<img src="@/assets/images/beans_cup.png" alt="cup from beans">
-					</div>
+				<div class="section__image-ibg-contain">
+					<img src="@/assets/images/beans_cup.png" alt="cup from beans">
+				</div>
 			</div>
 		</div>
 		
@@ -160,4 +160,6 @@
 	position: absolute;
 	z-index: 20;
 }
+
+
 </style>
