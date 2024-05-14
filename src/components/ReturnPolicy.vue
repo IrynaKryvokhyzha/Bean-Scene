@@ -10,6 +10,7 @@
 			<p class="terms__descriptions descriptions">Retail merchandise items can be returned to the location where they were purchased for store credit or full refund within 60 days of purchase. This extends to all Lucky Goat Coffee retail merchandise with original packaging, apparel with no visible signs of wear and a valid receipt. Discounted items are final sale and cannot be returned.</p>
 
 		</div>
+
 	</MainMasterPage>
 	
 </template>

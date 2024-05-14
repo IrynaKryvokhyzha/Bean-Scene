@@ -96,10 +96,10 @@
 .footer {
 	position: relative;
 //position: sticky;
-//width: 100%;
-//height: auto;
-//bottom: 0;
-//left: 0;
+   width: 100%;
+   height: auto;
+   bottom: 0;
+   left: 0;
 
 
 

@@ -1,17 +1,18 @@
 <template>
 	<div>
-		<header-component/>
+		<main-master-page>
 			<flavors-list class="flavors" :getFlavorsList="fullFlavorsList"/>
+      </main-master-page>
 	</div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import MainMasterPage from '../masterpages/MainMasterPage.vue'
 import FlavorsList from '../components/flavors/FlavorsList.vue'
-import HeaderComponent from '@/components/HeaderComponent.vue';
 	export default {
 		name: 'MenuView',
-		components: { HeaderComponent, FlavorsList },
+		components: { MainMasterPage, FlavorsList },
 		computed: {
 			fullFlavorsList() {
 				return this.getFlavorsList()

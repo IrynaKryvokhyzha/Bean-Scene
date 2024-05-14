@@ -1,10 +1,12 @@
 <template>
-	
-		<header-component class="header"/>
+	<div class="wrapper">
+      <header-component class="header"/>
 		<main class="main">
 			<slot></slot>
 		</main>
 		<footer-component class="footer"/>
+   </div>
+		
 
 	
 </template>
