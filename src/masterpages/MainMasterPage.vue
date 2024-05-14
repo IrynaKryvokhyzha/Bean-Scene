@@ -4,7 +4,7 @@
 		<main class="main">
 			<slot></slot>
 		</main>
-		<footer-component class="footer"/>
+		<footer-component />
    </div>
 		
 
@@ -23,17 +23,5 @@ import HeaderComponent from '../components/HeaderComponent.vue'
 
 <style lang="scss" scoped>
 
-.main{
-	
-}
-.header{
-	
-}
 
-main{
-
-}
-.footer{
-	
-}
 </style>

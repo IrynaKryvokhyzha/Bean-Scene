@@ -95,7 +95,6 @@
 <style lang="scss" scoped>
 .footer {
 	position: relative;
-//position: sticky;
    width: 100%;
    height: auto;
    bottom: 0;
