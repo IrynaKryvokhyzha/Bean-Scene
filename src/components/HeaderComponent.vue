@@ -57,7 +57,7 @@
           :class="{ 'cart-component--visible': cartVisible }"
           class="cart-component"
         >
-          <cart-component @close-cart="closeCart" />
+          <cart-manager @close-cart="closeCart" />
         </div>
         <!-- <button  class="open-filter" @click="toSearch"><font-awesome-icon :icon="['fas', 'magnifying-glass']" /></button>
 				<button class="cart" @click="toCart"><font-awesome-icon :icon="['fas', 'cart-shopping']" /></button> -->
@@ -68,10 +68,10 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import CartComponent from "@/components/CartComponent.vue";
+import CartManager from "@/components/cart/CartManager.vue";
 export default {
   name: "HeaderComponent",
-  components: { CartComponent },
+  components: { CartManager },
   data() {
     return {
       sidebarVisible: false,
