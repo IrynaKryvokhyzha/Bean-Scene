@@ -86,6 +86,9 @@ export default {
         return;
       } else {
         console.log("Payment method created:", paymentMethod);
+
+        console.log("Payment Method ID:", paymentMethod.id);
+        console.log("Total Price:", this.totalPrice);
         try {
           const response = await fetch(
             "https://us-central1-bean-scene-c577e.cloudfunctions.net/createPaymentIntent",
@@ -104,6 +107,9 @@ export default {
 
           if (result.error) {
             console.log("Error from server:", result.error);
+            this.$router.push({
+              name: "error",
+            });
             return;
           }
           console.log("Payment successful:", result);
