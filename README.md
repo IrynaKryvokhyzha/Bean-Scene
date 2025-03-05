@@ -1,4 +1,4 @@
-🚀 Live Demo 🔗 https://funny-sunburst-7036fc.netlify.app
+🚀 Live Demo 🔗 https://bean-scene.com
 
 
 
